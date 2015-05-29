@@ -4,8 +4,4 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :favorites
-
-  match "favorites/:post_id" => "favorites#create", :as => :favorite
-
-
 end

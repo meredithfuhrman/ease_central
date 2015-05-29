@@ -17,10 +17,12 @@
 
 $(function(){ $(document).foundation(
     $(".favorite").click(function() {
-      $(this).css("opacity", "0.5");
-      debugger;
+      var id = $(this)
       $.ajax({
+        method: "POST"
+        url: favorites
         success: function() {
+          $(id).css("opacity", "0.5");
         }
       })
     })
