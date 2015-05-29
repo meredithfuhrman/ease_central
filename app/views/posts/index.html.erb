@@ -3,9 +3,9 @@
   <ol>
     <% @posts.each do |post| %>
     <li>
-      <%= post[:title] %>
-      <a href="<%= post[:link] %>"><%= post[:link] %></a>
-      Comments: <%= post[:num_comments] %>
+      <%= post[:title] %><br>
+      <span><a href="http://www.reddit.com<%= post[:link] %>"><%= post[:link] %></a></span>
+      <p>Comments: <%= post[:num_comments] %></p>
     </li>
     <% end %>
   </ol>
