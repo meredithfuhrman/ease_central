@@ -1,8 +1,6 @@
-require 'net/http'
-
 class PostsController < ApplicationController
   def index
-    response = Net::HTTP.get_response(URI.parse("http://www.reddit.com/top.json"))
+    response = HTTParty.get("http://www.reddit.com/top.json")
     result = JSON.parse(response.body)["data"]["children"]
 
     @posts = []

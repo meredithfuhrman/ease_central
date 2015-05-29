@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 gem 'foundation-rails'
 gem 'rails_12factor'
+gem 'httparty'
 
 
 group :development, :test do
