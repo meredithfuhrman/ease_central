@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     result.each do |post|
       post.each do |key, value|
         if key == "data"
-          @posts << {title: value["title"], link: "http://www.reddit.com#{value["permalink"]}",
+          @posts << {id: value["id"], title: value["title"], link: "http://www.reddit.com#{value["permalink"]}",
           num_comments: value["num_comments"], thumbnail: value["thumbnail"]}
         end
       end

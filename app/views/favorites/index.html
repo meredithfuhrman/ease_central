@@ -1,19 +1,15 @@
 <div class="row">
   <div class="small-12 small-centered columns"  id="post-list">
 
-  <% if user_signed_in? %>
-    <%= link_to "Show me my favorites", favorites_path %>
-  <% end %>
-
   <ol>
-    <% @posts.each do |post| %>
+    <% @favorites.each do |favorite| %>
     <li>
       <div class="post">
         <div class="thumbnail">
-          <% if post[:thumbnail] == "" %>
+          <% if favorite[:thumbnail] == "" %>
             <%= image_tag("https://people.gnome.org/~tthurman/pics/maemo/raeddit-04/raeddit.png") %>
           <% else %>
-            <%= image_tag(post[:thumbnail]) %>
+            <%= image_tag(favorite[:thumbnail]) %>
           <% end %>
         </div>
 
@@ -22,10 +18,10 @@
         </div>
 
         <div class="info">
-          <%= post[:title] %><br>
+          <%= favorite[:title] %><br>
           <p>
-            <%= link_to post[:link], post[:link] %><br>
-            Comments: <%= post[:num_comments] %>
+            <%= link_to favorite[:link], favorite[:link] %><br>
+            Comments: <%= favorite[:num_comments] %>
           </p>
         </div>
       </div>
@@ -35,3 +31,5 @@
 
   </div>
 </div>
+
+<%= link_to "Home", posts_path %>
