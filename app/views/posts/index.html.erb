@@ -1,13 +1,25 @@
 <div class="row">
-  <div class="small-12 small-centered columns"  id="list-body">
+  <div class="small-12 small-centered columns"  id="post-list">
+
   <ol>
     <% @posts.each do |post| %>
     <li>
-      <%= post[:title] %><br>
-      <span><a href="http://www.reddit.com<%= post[:link] %>"><%= post[:link] %></a></span>
-      <p>Comments: <%= post[:num_comments] %></p>
+      <div class="thumbnail">
+        <% if post[:thumbnail] == "" %>
+          <%= image_tag("https://people.gnome.org/~tthurman/pics/maemo/raeddit-04/raeddit.png") %>
+        <% else %>
+          <img src="<%= post[:thumbnail] %>">
+        <% end %>
+      </div>
+
+      <div class="post">
+        <p><%= post[:title] %></p>
+        <a href="http://www.reddit.com<%= post[:link] %>"><%= post[:link] %></a>
+        <p>Comments: <%= post[:num_comments] %></p>
+      </div>
     </li>
     <% end %>
   </ol>
+
   </div>
 </div>

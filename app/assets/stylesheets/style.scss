@@ -2,7 +2,7 @@
   font-family: Verdana, Geneva, sans-serif;
 }
 
-#list-body {
+#post-list {
   background-color: #F6F6EF;
 }
 
@@ -14,17 +14,18 @@ a:visited {
   color: #828282;
 }
 
-/* li img {
-  height: 10px;
-  width: 10px;
+.thumbnail img {
+  height: 75px;
+  width: 75px;
   border: #F6F6EF;
-} */
+  float: left;
+}
 
-li {
-  font-size: 10pt;
+.post {
+  font-size: 12pt;
   }
 
-li p {
-  font-size: 9pt;
+.post p {
+  font-size: 10pt;
 /*   margin-left: 15px;
  */}
