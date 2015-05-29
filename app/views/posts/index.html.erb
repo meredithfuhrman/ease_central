@@ -4,18 +4,22 @@
   <ol>
     <% @posts.each do |post| %>
     <li>
-      <div class="thumbnail">
-        <% if post[:thumbnail] == "" %>
-          <%= image_tag("https://people.gnome.org/~tthurman/pics/maemo/raeddit-04/raeddit.png") %>
-        <% else %>
-          <img src="<%= post[:thumbnail] %>">
-        <% end %>
-      </div>
-
       <div class="post">
-        <p><%= post[:title] %></p>
-        <a href="http://www.reddit.com<%= post[:link] %>"><%= post[:link] %></a>
-        <p>Comments: <%= post[:num_comments] %></p>
+        <div class="thumbnail">
+          <% if post[:thumbnail] == "" %>
+            <%= image_tag("https://people.gnome.org/~tthurman/pics/maemo/raeddit-04/raeddit.png") %>
+          <% else %>
+            <%= image_tag(post[:thumbnail]) %>
+          <% end %>
+        </div>
+
+        <div class="info">
+          <%= post[:title] %><br>
+          <p>
+            <%= link_to post[:link], post[:link] %><br>
+            Comments: <%= post[:num_comments] %>
+          </p>
+        </div>
       </div>
     </li>
     <% end %>
