@@ -8,7 +8,7 @@ class CreateFavorites < ActiveRecord::Migration
       t.string :num_comments
       t.integer :user_id
 
-      t.timestamps null: false
+      t.timestamps
     end
   end
 end

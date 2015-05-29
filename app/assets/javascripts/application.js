@@ -15,4 +15,14 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){ $(document).foundation(
+    $(".favorite").click(function() {
+      $(this).css("opacity", "0.5");
+      debugger;
+      $.ajax({
+        success: function() {
+        }
+      })
+    })
+  );
+});

@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(version: 20150529162110) do
     t.string   "thumbnail"
     t.string   "num_comments"
     t.integer  "user_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
