@@ -22,11 +22,9 @@
         </div>
 
         <div class="info">
-          <%= post[:title] %><br>
-          <p>
-            <%= link_to post[:link], post[:link] %><br>
-            Comments: <%= post[:num_comments] %>
-          </p>
+          <p class="title"><%= post[:title] %></p>
+          <p class="link"><%= link_to post[:link], post[:link] %></p>
+          <p class="num_comments">Comments: <span><%= post[:num_comments] %></span></p>
 
 
         </div>

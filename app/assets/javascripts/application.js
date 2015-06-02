@@ -18,12 +18,19 @@
 $(function(){ $(document).foundation(
     $(".favorite").click(function() {
       var star = $(this)
-      var post_id = $('.blah')
-      debugger;
+      var post_id = $(this).attr('id')
+      var title = $(this).siblings('.info').children('.title').text()
+      var thumbnail = $(this).siblings('.thumbnail').children('img').attr('src')
+      var link = $(this).siblings('.info').children('.link').text()
+      var num_comments = $(this).siblings('.info').children('.num_comments').find('span').text()
       $.ajax({
         url: '/favorites',
-        method: "POST"
-        data: { post_id: post_id }
+        method: "POST",
+        data: { post_id: post_id,
+                    title: title,
+                    thumbnail: thumbnail,
+                    link: link,
+                    num_comments: num_comments   },
         success: function() {
           $(star).css("opacity", "0.5");
         },
