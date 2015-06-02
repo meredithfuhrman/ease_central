@@ -7,12 +7,13 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.create(favorite_params)
     @favorite.user_id = current_user.id
     if @favorite.save
-      flash[:notice] = "Favorite added."
       redirect_to posts_path
-    else
-      flash[:notice] = "Invalid entry"
-      redirect_to :back
     end
+  end
+
+  def destroy
+    Favorite.find(params[:id]).destroy
+    redirect_to favorites_path
   end
 
   protected

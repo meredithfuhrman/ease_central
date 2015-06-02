@@ -20,6 +20,7 @@ ol {
 
 .post {
   margin-top: 3em;
+  border-bottom: 2px dotted #94948F;
 }
 
 .favorite img {
@@ -43,4 +44,8 @@ ol {
 .info p {
   font-size: 10pt;
   margin-left: 135px;
+}
+
+.delete {
+  float: right;
 }

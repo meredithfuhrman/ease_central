@@ -1,6 +1,8 @@
 <div class="row">
   <div class="small-12 small-centered columns"  id="post-list">
 
+<%= link_to "Home", posts_path %>
+
   <ol>
     <% @favorites.each do |favorite| %>
     <li>
@@ -18,11 +20,10 @@
         </div>
 
         <div class="info">
-          <%= favorite[:title] %><br>
-          <p>
-            <%= link_to favorite[:link], favorite[:link] %><br>
-            Comments: <%= favorite[:num_comments] %>
-          </p>
+          <%= favorite[:title] %>
+          <p><%= link_to favorite[:link], favorite[:link] %></p>
+          <p>Comments: <%= favorite[:num_comments] %></p>
+          <p class="delete"><%= button_to "Delete", favorite_path(favorite), method: :delete %></p>          </p>          </p>
         </div>
       </div>
     </li>
@@ -31,5 +32,3 @@
 
   </div>
 </div>
-
-<%= link_to "Home", posts_path %>
