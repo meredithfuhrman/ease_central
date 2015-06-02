@@ -17,13 +17,16 @@
 
 $(function(){ $(document).foundation(
     $(".favorite").click(function() {
-      var id = $(this)
+      var star = $(this)
+      var post_id = $('.blah')
+      debugger;
       $.ajax({
+        url: '/favorites',
         method: "POST"
-        url: favorites
+        data: { post_id: post_id }
         success: function() {
-          $(id).css("opacity", "0.5");
-        }
+          $(star).css("opacity", "0.5");
+        },
       })
     })
   );

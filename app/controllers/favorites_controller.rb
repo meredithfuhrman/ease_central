@@ -7,7 +7,4 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.create(favorite_params)
     @favorite.user_id = current_user.id
   end
-
-  def destroy
-  end
 end
